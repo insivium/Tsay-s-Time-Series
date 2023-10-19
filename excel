@@ -1,0 +1,24 @@
+library(readr)
+library(xts)
+# Read the CSV file (replace with your actual file path)
+data <- read.csv("C:\\Users\\insivium\\Desktop\\UTM\\Statistics\\Time Series\\MCBG.csv", sep = ",", stringsAsFactors = FALSE)
+
+# Extract relevant columns
+# the code does not directly sort prices and data, for now please use any spreadsheet software.
+# Closing prices have been downloaded from investing.com
+# Can only plot one time series at a time
+
+cleaned_data <- data[, c("Date", "Price")]
+
+
+# Convert Date to Date object (if it is a 2-digit year data begin with small y, if 4-digit begin with capital Y)
+cleaned_data$Date <- as.Date(cleaned_data$Date, format = "%d/%m/%Y")
+
+# Convert Price to numeric
+cleaned_data$Price <- as.numeric(gsub("[^0-9.]", "", cleaned_data$Price))
+
+# Convert to xts object
+price_xts <- xts(cleaned_data$Price, order.by = cleaned_data$Date)
+
+# Plot the time series
+plot(price_xts, main = "Stock Price", ylab = "Price", xlab = "Date")
