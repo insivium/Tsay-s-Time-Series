@@ -3,8 +3,8 @@ library(xts)
 
 # List of file paths for each stock's data
 file_paths <- c(
-  "C:\\Users\\Halooman\\Desktop\\UTM\\Statistics\\Time Series\\MCBG.csv",
-  "C:\\Users\\Halooman\\Desktop\\UTM\\Statistics\\Time Series\\NMH.csv",
+  "C:\\Users\\~~~~~~\\Desktop\\UTM\\Statistics\\Time Series\\MCBG.csv",
+  "C:\\Users\\~~~~~~\\Desktop\\UTM\\Statistics\\Time Series\\NMH.csv",
   # Add more file paths as needed
 )
 
